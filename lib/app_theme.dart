@@ -3,9 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 const _primaryColor = Colors.blue;
 
-ThemeData appTheme() {
+ThemeData appTheme(Brightness brightness) {
   return ThemeData(
     colorScheme: ColorScheme.fromSeed(
+      brightness: brightness,
       seedColor: _primaryColor,
       shadow: Colors.black12,
     ),

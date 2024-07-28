@@ -32,10 +32,29 @@
 
   <title>unfck</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .centered-container {
+      display: grid;
+      height: 100vh;
+      place-items: center;
+      background-color: #F8F9FF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .centered-container {
+        background-color: #121418;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div style="display: grid; height: 100vh; place-items: center; background-color: #F8F9FF">
+  <div class="centered-container">
     <img src="logotype@2x.png" style="height:60px;" />
   </div>
   <script src="flutter_bootstrap.js" async></script>

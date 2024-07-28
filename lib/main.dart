@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
     return ContextWatch.root(
       child: MaterialApp(
         title: 'Unfck',
-        theme: appTheme(),
+        theme: appTheme(Brightness.light),
+        darkTheme: appTheme(Brightness.dark),
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),
         navigatorKey: di.navigatorKey,
