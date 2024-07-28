@@ -11,7 +11,7 @@ class GoalModel with GoalModelMappable {
   final String? customTitle;
   final Set<DayModel> completions;
   final bool hidden;
-  final int order;
+  final double order;
 
   late final title = customTitle ?? defaultTitle;
 

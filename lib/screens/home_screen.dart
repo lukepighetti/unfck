@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(PhosphorIcons.stack()),
                 color: context.colorPrimary,
                 onPressed: () {
-                  // TODO:
+                  di.navigation.showSettingsScreen();
                 },
               ),
             ],
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
             style: context.textCaption,
           ),
           SizedBox(height: 12),
-          for (final goal in vm.value.visibleGoals)
+          for (final goal in vm.value.sortedVisibleGoals)
             Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: GoalCard(goal: goal),

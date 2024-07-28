@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:unfck/di.dart';
+import 'package:unfck/screens/settings_screen.dart';
 
 class NavigationService {
   late final _navigatorKey = di.navigatorKey;
 
   BuildContext get context => _navigatorKey.currentContext!;
 
-  // Future<void> showThingDetails(ThingModel thing) async {
-  //   _showBottomSheet(context, ThingScreen());
-  // }
+  Future<void> pop<T>() {
+    return Navigator.of(context).maybePop();
+  }
+
+  Future<void> showSettingsScreen() async {
+    _showBottomSheet(context, SettingsScreen());
+  }
 
   // Future<ThingModel?> showEditThingDialog({ThingModel? thing}) async {
   //   return _showDialog(context, EditThingDialog(thing: thing));
@@ -18,6 +23,8 @@ class NavigationService {
     return showModalBottomSheet<T>(
       context: context,
       builder: (_) => child,
+      clipBehavior: Clip.antiAlias,
+      scrollControlDisabledMaxHeightRatio: 0.85,
     );
   }
 

@@ -42,7 +42,7 @@ class HeatmapView extends StatelessWidget {
               final x = (width / dimension).floor();
 
               // make sure we show progress
-              final minMaxValue = vm.value.visibleGoals.length;
+              final minMaxValue = vm.value.sortedVisibleGoals.length;
 
               // Extract values and max value
               var maxValue = minMaxValue;

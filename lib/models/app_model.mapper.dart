@@ -24,18 +24,23 @@ class AppModelMapper extends ClassMapperBase<AppModel> {
   static Set<GoalModel> _$allGoals(AppModel v) => v.allGoals;
   static const Field<AppModel, Set<GoalModel>> _f$allGoals =
       Field('allGoals', _$allGoals);
+  static List<GoalModel> _$sortedAllGoals(AppModel v) => v.sortedAllGoals;
+  static const Field<AppModel, List<GoalModel>> _f$sortedAllGoals =
+      Field('sortedAllGoals', _$sortedAllGoals, mode: FieldMode.member);
   static Map<DayModel, int> _$heatMap(AppModel v) => v.heatMap;
   static const Field<AppModel, Map<DayModel, int>> _f$heatMap =
       Field('heatMap', _$heatMap, mode: FieldMode.member);
-  static Set<GoalModel> _$visibleGoals(AppModel v) => v.visibleGoals;
-  static const Field<AppModel, Set<GoalModel>> _f$visibleGoals =
-      Field('visibleGoals', _$visibleGoals, mode: FieldMode.member);
+  static Set<GoalModel> _$sortedVisibleGoals(AppModel v) =>
+      v.sortedVisibleGoals;
+  static const Field<AppModel, Set<GoalModel>> _f$sortedVisibleGoals =
+      Field('sortedVisibleGoals', _$sortedVisibleGoals, mode: FieldMode.member);
 
   @override
   final MappableFields<AppModel> fields = const {
     #allGoals: _f$allGoals,
+    #sortedAllGoals: _f$sortedAllGoals,
     #heatMap: _f$heatMap,
-    #visibleGoals: _f$visibleGoals,
+    #sortedVisibleGoals: _f$sortedVisibleGoals,
   };
 
   static AppModel _instantiate(DecodingData data) {

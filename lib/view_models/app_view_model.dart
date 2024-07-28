@@ -31,4 +31,23 @@ class AppViewModel extends ValueNotifier<AppModel> {
     super.value = x;
     di.prefs.setString('app-view-model', x.toJson());
   }
+
+  void toggleGoalHidden(GoalModel goal) {
+    value = value.copyWith(
+      allGoals: {
+        for (final g in value.allGoals)
+          if (g.id == goal.id) g.copyWith(hidden: !g.hidden) else g
+      },
+    );
+  }
+
+  void reorderGoals(int oldIndex, int newIndex) {
+    final list = value.allGoals.toList();
+    list.insert(newIndex, list.removeAt(oldIndex));
+    value = value.copyWith(
+      allGoals: {
+        for (final (i, g) in list.indexed) g.copyWith(order: i.toDouble())
+      },
+    );
+  }
 }

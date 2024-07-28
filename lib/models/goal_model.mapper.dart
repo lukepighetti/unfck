@@ -34,8 +34,8 @@ class GoalModelMapper extends ClassMapperBase<GoalModel> {
       Field('completions', _$completions);
   static bool _$hidden(GoalModel v) => v.hidden;
   static const Field<GoalModel, bool> _f$hidden = Field('hidden', _$hidden);
-  static int _$order(GoalModel v) => v.order;
-  static const Field<GoalModel, int> _f$order = Field('order', _$order);
+  static double _$order(GoalModel v) => v.order;
+  static const Field<GoalModel, double> _f$order = Field('order', _$order);
   static String _$title(GoalModel v) => v.title;
   static const Field<GoalModel, String> _f$title =
       Field('title', _$title, mode: FieldMode.member);
@@ -121,7 +121,7 @@ abstract class GoalModelCopyWith<$R, $In extends GoalModel, $Out>
       String? customTitle,
       Set<DayModel>? completions,
       bool? hidden,
-      int? order});
+      double? order});
   GoalModelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -140,7 +140,7 @@ class _GoalModelCopyWithImpl<$R, $Out>
           Object? customTitle = $none,
           Set<DayModel>? completions,
           bool? hidden,
-          int? order}) =>
+          double? order}) =>
       $apply(FieldCopyWithData({
         if (id != null) #id: id,
         if (defaultTitle != null) #defaultTitle: defaultTitle,

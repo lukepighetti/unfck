@@ -8,6 +8,9 @@ part 'app_model.mapper.dart';
 class AppModel with AppModelMappable {
   final Set<GoalModel> allGoals;
 
+  late final List<GoalModel> sortedAllGoals = [...allGoals]
+    ..sort((a, b) => a.order.compareTo(b.order));
+
   AppModel({
     required this.allGoals,
   });
@@ -23,8 +26,8 @@ class AppModel with AppModelMappable {
     return result;
   }();
 
-  late final Set<GoalModel> visibleGoals = {
-    for (final x in allGoals)
+  late final Set<GoalModel> sortedVisibleGoals = {
+    for (final x in sortedAllGoals)
       if (!x.hidden) x
   };
 
@@ -45,7 +48,7 @@ class AppModel with AppModelMappable {
           ].indexed)
             GoalModel.create(
               x,
-              order: i,
+              order: i.toDouble(),
             ),
           for (final (i, x) in [
             'Custom 1',
@@ -56,7 +59,7 @@ class AppModel with AppModelMappable {
           ].indexed)
             GoalModel.create(
               x,
-              order: 100 + i,
+              order: (100 + i).toDouble(),
               hidden: true,
             ),
         };
