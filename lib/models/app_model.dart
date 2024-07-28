@@ -1,38 +1,51 @@
 import 'package:dart_mappable/dart_mappable.dart';
-import 'package:unfck/models/archived_thing_model.dart';
-import 'package:unfck/models/thing_model.dart';
+import 'package:unfck/models/goal_model.dart';
 
 part 'app_model.mapper.dart';
 
 @MappableClass()
 class AppModel with AppModelMappable {
-  final ThingModel? thing1;
-  final ThingModel? thing2;
-  final ThingModel? thing3;
-  final ThingModel? thing4;
-  final ThingModel? thing5;
+  final Set<GoalModel> allGoals;
 
-  late final fiveThings = [thing1, thing2, thing3, thing4, thing5];
-
-  final Set<ArchivedThingModel> history;
-
-  late final hasAnyItems =
-      [...history, ...fiveThings].whereType<ThingModel>().isNotEmpty;
+  late final Set<GoalModel> visibleGoals = {
+    for (final x in allGoals)
+      if (!x.hidden) x
+  };
 
   AppModel({
-    required this.thing1,
-    required this.thing2,
-    required this.thing3,
-    required this.thing4,
-    required this.thing5,
-    required this.history,
+    required this.allGoals,
   });
 
   AppModel.create()
-      : thing1 = null,
-        thing2 = null,
-        thing3 = null,
-        thing4 = null,
-        thing5 = null,
-        history = {};
+      : allGoals = {
+          for (final (i, x) in [
+            'Stay hydrated',
+            'Sleep',
+            'Eat healthy',
+            'Thermal',
+            'Relationships',
+            'Community',
+            'Intimacy',
+            'Define success',
+            'Stay positive',
+            'Get outside',
+            'Reflect',
+          ].indexed)
+            GoalModel.create(
+              x,
+              order: i,
+            ),
+          for (final (i, x) in [
+            'Custom 1',
+            'Custom 2',
+            'Custom 3',
+            'Custom 4',
+            'Custom 5'
+          ].indexed)
+            GoalModel.create(
+              x,
+              order: 100 + i,
+              hidden: true,
+            ),
+        };
 }

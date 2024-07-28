@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContextWatch.root(
       child: MaterialApp(
-        title: 'Storyteller',
+        title: 'Unfck',
         theme: appTheme(),
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),

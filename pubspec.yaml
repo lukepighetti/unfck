@@ -1,8 +1,6 @@
 name: unfck
-description: "A new Flutter project."
-
+description: Unfuck your life
 publish_to: "none"
-
 version: 1.0.0+1
 
 environment:
@@ -19,6 +17,7 @@ dependencies:
   google_fonts: ^6.2.1
   url_launcher: ^6.3.0
   nanoid2: ^2.0.1
+  phosphor_flutter: ^2.1.0
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:unfck/di.dart';
 import 'package:unfck/models/app_model.dart';
-import 'package:unfck/models/thing_model.dart';
+import 'package:unfck/models/day_model.dart';
+import 'package:unfck/models/goal_model.dart';
 
 class AppViewModel extends ValueNotifier<AppModel> {
   AppViewModel() : super(AppModel.create());
@@ -16,31 +17,13 @@ class AppViewModel extends ValueNotifier<AppModel> {
     }
   }
 
-  void setThingIfEmpty(int n, ThingModel thing) {
-    assert(n >= 1 && n <= 5, "There is a maximum of five things");
-    var x = value;
-    if (n == 1 && x.thing1 == null) x = x.copyWith(thing1: thing);
-    if (n == 2 && x.thing2 == null) x = x.copyWith(thing2: thing);
-    if (n == 3 && x.thing3 == null) x = x.copyWith(thing3: thing);
-    if (n == 4 && x.thing4 == null) x = x.copyWith(thing4: thing);
-    if (n == 5 && x.thing5 == null) x = x.copyWith(thing5: thing);
-    value = x;
-  }
-
-  void updateThing(ThingModel thing) {
-    var x = value;
-    if (x.thing1?.id == thing.id) x = x.copyWith(thing1: thing);
-    if (x.thing2?.id == thing.id) x = x.copyWith(thing2: thing);
-    if (x.thing3?.id == thing.id) x = x.copyWith(thing3: thing);
-    if (x.thing4?.id == thing.id) x = x.copyWith(thing4: thing);
-    if (x.thing5?.id == thing.id) x = x.copyWith(thing5: thing);
-    x = x.copyWith(
-      history: {
-        for (final x in value.history)
-          if (x.thing.id == thing.id) x.copyWith(thing: thing),
+  void toggleGoal(GoalModel goal) {
+    value = value.copyWith(
+      allGoals: {
+        for (final g in value.allGoals)
+          if (g.id == goal.id) g.toggleCompletion(DayModel.today()) else g
       },
     );
-    value = x;
   }
 
   @override

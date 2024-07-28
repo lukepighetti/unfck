@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const _primaryColor = Colors.blue;
+
 ThemeData appTheme() {
   return ThemeData(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.green,
+      seedColor: _primaryColor,
       shadow: Colors.black12,
     ),
+    highlightColor: _primaryColor.withOpacity(0.2),
+    hoverColor: _primaryColor.withOpacity(0.1),
     splashFactory: NoSplash.splashFactory,
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
@@ -18,7 +22,7 @@ ThemeData appTheme() {
 }
 
 extension ThemeExtensions on BuildContext {
-  Color get colorPrimary => Colors.green;
+  Color get colorPrimary => _primaryColor;
   Color get colorForeground => Theme.of(this).colorScheme.onSurface;
   Color get colorBackground => Theme.of(this).colorScheme.surface;
   Color get colorGrey1 => Color.lerp(colorBackground, colorForeground, 0.2)!;

@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:unfck/di.dart';
-import 'package:unfck/dialogs/edit_thing_dialog.dart';
-import 'package:unfck/models/thing_model.dart';
-import 'package:unfck/screens/thing_screen.dart';
 
 class NavigationService {
   late final _navigatorKey = di.navigatorKey;
 
   BuildContext get context => _navigatorKey.currentContext!;
 
-  Future<void> showThingDetails(ThingModel thing) async {
-    _showBottomSheet(context, ThingScreen());
-  }
+  // Future<void> showThingDetails(ThingModel thing) async {
+  //   _showBottomSheet(context, ThingScreen());
+  // }
 
-  Future<ThingModel?> showEditThingDialog({ThingModel? thing}) async {
-    return _showDialog(context, EditThingDialog(thing: thing));
-  }
+  // Future<ThingModel?> showEditThingDialog({ThingModel? thing}) async {
+  //   return _showDialog(context, EditThingDialog(thing: thing));
+  // }
 
   static Future<T?> _showBottomSheet<T>(BuildContext context, Widget child) {
     return showModalBottomSheet<T>(

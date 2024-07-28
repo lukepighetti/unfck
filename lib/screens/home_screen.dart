@@ -1,7 +1,9 @@
 import 'package:context_watch/context_watch.dart';
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/di.dart';
+import 'package:unfck/widgets/logotype.dart';
 import 'package:unfck/widgets/made_with_love.dart';
 import 'package:unfck/widgets/thing_card.dart';
 
@@ -16,36 +18,40 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final vm = di.appViewModel..watch(context);
-    print(vm.value);
 
     return Material(
-      child: Padding(
+      child: ListView(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            Text(
-              "What are the 5 most exciting things that\nhave happened in your life recently?",
-              style: context.textBody,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 24),
-            for (final (i, x) in vm.value.fiveThings.indexed) ...[
-              if (x == null)
-                ThingCard.empty(
-                  thingNumber: i + 1,
-                )
-              else
-                ThingCard(
-                  thing: x,
-                  thingNumber: i + 1,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Opacity(
+                opacity: 0,
+                child: IconButton(
+                  icon: SizedBox(),
+                  onPressed: null,
                 ),
-              SizedBox(height: 8),
+              ),
+              Logotype(),
+              IconButton.filledTonal(
+                icon: Icon(PhosphorIcons.stack()),
+                color: context.colorPrimary,
+                onPressed: () {
+                  // TODO:
+                },
+              ),
             ],
-            Spacer(),
-            SizedBox(height: 24),
-            MadeWithLove(),
-          ],
-        ),
+          ),
+          SizedBox(height: 24),
+          for (final goal in vm.value.visibleGoals)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: GoalCard(goal: goal),
+            ),
+          SizedBox(height: 24),
+          MadeWithLove(),
+        ],
       ),
     );
   }

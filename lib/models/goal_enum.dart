@@ -1,0 +1,18 @@
+enum GoalEnum {
+  drinkWater,
+  sleep,
+  eatHealthy,
+  thermal,
+  relationships,
+  community,
+  intimacy,
+  defineSuccess,
+  stayPositive,
+  getOutside,
+  reflect,
+  custom1,
+  custom2,
+  custom3,
+  custom4,
+  custom5,
+}

@@ -1,16 +1,36 @@
-# unfck
+# Unfck Your Life
 
-A new Flutter project.
+## Splash Screen
 
-## Getting Started
+- [ ] splashy "UNFCK" logotype
 
-This project is a starting point for a Flutter application.
+## Home Screen
 
-A few resources to get you started if this is your first Flutter project:
+- [ ] app bar
+    - [ ] app name / logotype
+    - [ ] settings button
+- [ ] github style heat map of % daily completion
+- [ ] XP header `v2`
+    - [ ] level, next unlock teaser
+    - [ ] level up gives duck photo/video 
+- [ ] list of goals
+    - [ ] highlight items that haven't been addressed in N days `v1 -> 3 days`
+    - [ ] check them off
+        - [ ] gives XP `v2`
+- [ ] made with love footer
+    - [ ] source button
+    - [ ] feedback button
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Settings Screen
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [ ] highlight items that haven't been address in `wait for feedback`
+    - don't highlight
+    - 3 days `default` `v1`
+    - 7 days
+    - 30 days
+
+- [ ] list of goals
+    - [ ] hide/show goal
+    - [ ] reorder goals
+    - [ ] rename goals
+    - [ ] 5 custom goals
