@@ -29,8 +29,8 @@
     - 7 days
     - 30 days
 
-- [ ] list of goals
-    - [ ] hide/show goal
-    - [ ] reorder goals
-    - [ ] rename goals
-    - [ ] 5 custom goals
+- [x] list of goals
+    - [x] hide/show goal
+    - [x] reorder goals
+    - [x] rename goals
+    - [x] 5 custom goals

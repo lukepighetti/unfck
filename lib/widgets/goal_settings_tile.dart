@@ -18,6 +18,15 @@ class GoalSettingsTile extends StatefulWidget {
 
 class _GoalSettingsTileState extends State<GoalSettingsTile> {
   var hovering = false;
+  late final controller = TextEditingController(text: widget.goal.title);
+  late final focusNode = FocusNode();
+
+  void saveTitle() {
+    final newTitle = controller.text.trim();
+    if (newTitle.isEmpty) return;
+    di.appViewModel.updateGoalTitle(widget.goal, newTitle);
+    focusNode.unfocus();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +48,14 @@ class _GoalSettingsTileState extends State<GoalSettingsTile> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    goal.title,
+                  child: TextField(
+                    controller: controller,
+                    focusNode: focusNode,
+                    onSubmitted: (_) => saveTitle(),
+                    onTapOutside: (_) => saveTitle(),
                     style: context.textBody,
                     maxLines: 1,
+                    decoration: InputDecoration(border: InputBorder.none),
                   ),
                 ),
               ),

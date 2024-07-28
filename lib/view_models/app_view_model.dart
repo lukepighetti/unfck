@@ -50,4 +50,13 @@ class AppViewModel extends ValueNotifier<AppModel> {
       },
     );
   }
+
+  void updateGoalTitle(GoalModel goal, String newTitle) {
+    value = value.copyWith(
+      allGoals: {
+        for (final g in value.allGoals)
+          if (goal.id == g.id) g.copyWith(customTitle: newTitle) else g
+      },
+    );
+  }
 }
