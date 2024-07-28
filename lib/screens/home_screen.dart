@@ -7,6 +7,7 @@ import 'package:unfck/views/heatmap_view.dart';
 import 'package:unfck/widgets/logotype.dart';
 import 'package:unfck/widgets/made_with_love.dart';
 import 'package:unfck/widgets/thing_card.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -63,7 +64,25 @@ class _HomeScreenState extends State<HomeScreen> {
               child: GoalCard(goal: goal),
             ),
           SizedBox(height: 24),
-          MadeWithLove(),
+          Row(
+            children: [
+              IconButton.filledTonal(
+                icon: Icon(PhosphorIcons.envelopeSimple()),
+                onPressed: () {
+                  launchUrlString('mailto:lukepighetti+unfck@gmail.com');
+                },
+              ),
+              Expanded(
+                child: MadeWithLove(),
+              ),
+              IconButton.filledTonal(
+                icon: Icon(PhosphorIcons.githubLogo()),
+                onPressed: () {
+                  launchUrlString('https://github.com/lukepighetti/unfck');
+                },
+              ),
+            ],
+          ),
         ],
       ),
     );

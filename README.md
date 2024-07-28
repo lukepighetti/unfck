@@ -2,24 +2,24 @@
 
 ## Splash Screen
 
-- [ ] splashy "UNFCK" logotype
+- [x] splashy "UNFCK" logotype
 
 ## Home Screen
 
-- [ ] app bar
-    - [ ] app name / logotype
-    - [ ] settings button
-- [ ] github style heat map of % daily completion
+- [x] app bar
+    - [x] app name / logotype
+    - [x] settings button
+- [x] github style heat map of % daily completion
 - [ ] XP header `v2`
     - [ ] level, next unlock teaser
     - [ ] level up gives duck photo/video 
-- [ ] list of goals
+- [x] list of goals
     - [ ] highlight items that haven't been addressed in N days `v1 -> 3 days`
-    - [ ] check them off
+    - [x] check them off
         - [ ] gives XP `v2`
-- [ ] made with love footer
-    - [ ] source button
-    - [ ] feedback button
+- [x] made with love footer
+    - [x] source button
+    - [x] feedback button
 
 ## Settings Screen
 

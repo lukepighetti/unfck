@@ -14,29 +14,26 @@ class MadeWithLove extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Text.rich(
-        TextSpan(
-          children: [
-            const TextSpan(text: "Made with "),
-            WidgetSpan(
-              child: Image.asset(
-                Assets.twemojiRedHeart.assetPath,
-                width: context.textCaption.fontSize! * 1.2,
-              ),
+    return Text.rich(
+      TextSpan(
+        children: [
+          const TextSpan(text: "Made with "),
+          WidgetSpan(
+            child: Image.asset(
+              Assets.twemojiRedHeart.assetPath,
+              width: context.textCaption.fontSize! * 1.2,
             ),
-            const TextSpan(text: " by "),
-            TextSpan(
-              text: "Luke Pighetti",
-              style: TextStyle(color: context.colorPrimary),
-              recognizer: TapGestureRecognizer()..onTap = handleViewCreator,
-            ),
-          ],
-        ),
-        style: context.textCaption,
-        textAlign: TextAlign.center,
+          ),
+          const TextSpan(text: " by "),
+          TextSpan(
+            text: "Luke Pighetti",
+            style: TextStyle(color: context.colorPrimary),
+            recognizer: TapGestureRecognizer()..onTap = handleViewCreator,
+          ),
+        ],
       ),
+      style: context.textCaption,
+      textAlign: TextAlign.center,
     );
   }
 }
