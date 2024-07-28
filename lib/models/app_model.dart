@@ -34,23 +34,25 @@ class AppModel with AppModelMappable {
   AppModel.create()
       : allGoals = {
           for (final (i, x) in [
-            'Stay hydrated',
-            'Sleep',
-            'Eat healthy',
-            'Thermal',
-            'Relationships',
-            'Community',
-            'Intimacy',
-            'Define success',
-            'Stay positive',
-            'Get outside',
-            'Reflect',
+            'Drink enough water',
+            'Sleep 7-8 hours',
+            'Eat the right amount of healthy food',
+            'Exercise or do manual labor',
+            'Connect with a friend or loved one',
+            'Be positive, break worry loops, be patient',
+            'Spend some time outdoors',
           ].indexed)
             GoalModel.create(
               x,
               order: i.toDouble(),
             ),
           for (final (i, x) in [
+            'Spend quality time with your pet',
+            'Get out into the community',
+            'Invest in intimacy with your partner',
+            'Make progress towards your definition of success',
+            'Reflect on the most exciting parts of your day',
+            'Sauna or hot-cold-hot-cold shower',
             'Custom 1',
             'Custom 2',
             'Custom 3',
