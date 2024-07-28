@@ -1,1 +1,5 @@
-dart run build_runner watch
+while true; do
+  dart run build_runner watch
+  echo "Process crashed with exit code $?. Restarting..." >&2
+  sleep 5
+done

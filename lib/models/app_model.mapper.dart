@@ -24,6 +24,9 @@ class AppModelMapper extends ClassMapperBase<AppModel> {
   static Set<GoalModel> _$allGoals(AppModel v) => v.allGoals;
   static const Field<AppModel, Set<GoalModel>> _f$allGoals =
       Field('allGoals', _$allGoals);
+  static Map<DayModel, int> _$heatMap(AppModel v) => v.heatMap;
+  static const Field<AppModel, Map<DayModel, int>> _f$heatMap =
+      Field('heatMap', _$heatMap, mode: FieldMode.member);
   static Set<GoalModel> _$visibleGoals(AppModel v) => v.visibleGoals;
   static const Field<AppModel, Set<GoalModel>> _f$visibleGoals =
       Field('visibleGoals', _$visibleGoals, mode: FieldMode.member);
@@ -31,6 +34,7 @@ class AppModelMapper extends ClassMapperBase<AppModel> {
   @override
   final MappableFields<AppModel> fields = const {
     #allGoals: _f$allGoals,
+    #heatMap: _f$heatMap,
     #visibleGoals: _f$visibleGoals,
   };
 

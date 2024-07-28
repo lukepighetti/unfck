@@ -15,6 +15,7 @@ class GoalCard extends StatefulWidget {
 
 class _GoalCardState extends State<GoalCard> {
   var hovering = false;
+
   @override
   Widget build(BuildContext context) {
     final goal = widget.goal;
@@ -23,7 +24,7 @@ class _GoalCardState extends State<GoalCard> {
       borderRadius: BorderRadius.circular(12),
       clipBehavior: Clip.hardEdge,
       elevation: 10,
-      color: Theme.of(context).colorScheme.surfaceContainerLowest,
+      color: context.colorGrey1,
       child: InkWell(
         onHover: (hovering) => setState(() => this.hovering = hovering),
         onTap: () async {

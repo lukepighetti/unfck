@@ -1,4 +1,5 @@
 import 'package:dart_mappable/dart_mappable.dart';
+import 'package:unfck/models/day_model.dart';
 import 'package:unfck/models/goal_model.dart';
 
 part 'app_model.mapper.dart';
@@ -7,14 +8,25 @@ part 'app_model.mapper.dart';
 class AppModel with AppModelMappable {
   final Set<GoalModel> allGoals;
 
+  AppModel({
+    required this.allGoals,
+  });
+
+  late final heatMap = () {
+    final result = <DayModel, int>{};
+    for (final g in allGoals) {
+      for (final d in g.completions) {
+        result[d] ??= 0;
+        result[d] = result[d]! + 1;
+      }
+    }
+    return result;
+  }();
+
   late final Set<GoalModel> visibleGoals = {
     for (final x in allGoals)
       if (!x.hidden) x
   };
-
-  AppModel({
-    required this.allGoals,
-  });
 
   AppModel.create()
       : allGoals = {

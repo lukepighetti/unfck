@@ -25,10 +25,11 @@ extension ThemeExtensions on BuildContext {
   Color get colorPrimary => _primaryColor;
   Color get colorForeground => Theme.of(this).colorScheme.onSurface;
   Color get colorBackground => Theme.of(this).colorScheme.surface;
-  Color get colorGrey1 => Color.lerp(colorBackground, colorForeground, 0.2)!;
-  Color get colorGrey2 => Color.lerp(colorBackground, colorForeground, 0.4)!;
-  Color get colorGrey3 => Color.lerp(colorBackground, colorForeground, 0.6)!;
-  Color get colorGrey4 => Color.lerp(colorBackground, colorForeground, 0.8)!;
+  Color get colorGrey1 => Theme.of(this).colorScheme.surfaceContainerLowest;
+  Color get colorGrey2 => Theme.of(this).colorScheme.surfaceContainerLow;
+  Color get colorGrey3 => Theme.of(this).colorScheme.surfaceContainer;
+  Color get colorGrey4 => Theme.of(this).colorScheme.surfaceContainerHigh;
+  Color get colorGrey5 => Theme.of(this).colorScheme.surfaceContainerHighest;
 
   TextStyle get textHeadline => GoogleFonts.outfit(
         fontSize: 24,

@@ -20,28 +20,22 @@ class DayModelMapper extends ClassMapperBase<DayModel> {
   @override
   final String id = 'DayModel';
 
-  static const Field<DayModel, DateTime> _f$x =
-      Field('x', null, mode: FieldMode.param);
   static int _$year(DayModel v) => v.year;
-  static const Field<DayModel, int> _f$year =
-      Field('year', _$year, mode: FieldMode.member);
+  static const Field<DayModel, int> _f$year = Field('year', _$year);
   static int _$month(DayModel v) => v.month;
-  static const Field<DayModel, int> _f$month =
-      Field('month', _$month, mode: FieldMode.member);
+  static const Field<DayModel, int> _f$month = Field('month', _$month);
   static int _$day(DayModel v) => v.day;
-  static const Field<DayModel, int> _f$day =
-      Field('day', _$day, mode: FieldMode.member);
+  static const Field<DayModel, int> _f$day = Field('day', _$day);
 
   @override
   final MappableFields<DayModel> fields = const {
-    #x: _f$x,
     #year: _f$year,
     #month: _f$month,
     #day: _f$day,
   };
 
   static DayModel _instantiate(DecodingData data) {
-    return DayModel.fromDateTime(data.dec(_f$x));
+    return DayModel(data.dec(_f$year), data.dec(_f$month), data.dec(_f$day));
   }
 
   @override
@@ -93,7 +87,7 @@ extension DayModelValueCopy<$R, $Out> on ObjectCopyWith<$R, DayModel, $Out> {
 
 abstract class DayModelCopyWith<$R, $In extends DayModel, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({required DateTime x});
+  $R call({int? year, int? month, int? day});
   DayModelCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -106,9 +100,16 @@ class _DayModelCopyWithImpl<$R, $Out>
   late final ClassMapperBase<DayModel> $mapper =
       DayModelMapper.ensureInitialized();
   @override
-  $R call({required DateTime x}) => $apply(FieldCopyWithData({#x: x}));
+  $R call({int? year, int? month, int? day}) => $apply(FieldCopyWithData({
+        if (year != null) #year: year,
+        if (month != null) #month: month,
+        if (day != null) #day: day
+      }));
   @override
-  DayModel $make(CopyWithData data) => DayModel.fromDateTime(data.get(#x));
+  DayModel $make(CopyWithData data) => DayModel(
+      data.get(#year, or: $value.year),
+      data.get(#month, or: $value.month),
+      data.get(#day, or: $value.day));
 
   @override
   DayModelCopyWith<$R2, DayModel, $Out2> $chain<$R2, $Out2>(

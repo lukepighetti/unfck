@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/di.dart';
+import 'package:unfck/views/heatmap_view.dart';
 import 'package:unfck/widgets/logotype.dart';
 import 'package:unfck/widgets/made_with_love.dart';
 import 'package:unfck/widgets/thing_card.dart';
@@ -44,6 +45,18 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           SizedBox(height: 24),
+          Text(
+            "Day Streak".toUpperCase(),
+            style: context.textCaption,
+          ),
+          SizedBox(height: 12),
+          HeatmapView(),
+          SizedBox(height: 24),
+          Text(
+            "Goals".toUpperCase(),
+            style: context.textCaption,
+          ),
+          SizedBox(height: 12),
           for (final goal in vm.value.visibleGoals)
             Padding(
               padding: const EdgeInsets.only(bottom: 12),
