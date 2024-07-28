@@ -1,0 +1,35 @@
+name: str
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  dart_mappable: ^4.2.2
+  shared_preferences: ^2.2.3
+  context_watch: ^3.3.0
+  google_fonts: ^6.2.1
+  url_launcher: ^6.3.0
+  nanoid2: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+  dart_mappable_builder: ^4.2.3
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
