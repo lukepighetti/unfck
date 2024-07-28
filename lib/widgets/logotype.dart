@@ -8,10 +8,9 @@ class Logotype extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       Assets.logotype.assetPath,
-      // fit: BoxFit.contain,
-      height: 36,
-      // isAntiAlias: true,
-      // filterQuality: FilterQuality.high,
+      height: 40,
+      isAntiAlias: true,
+      filterQuality: FilterQuality.high,
     );
   }
 }
