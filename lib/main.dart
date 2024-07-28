@@ -1,8 +1,8 @@
 import 'package:context_watch/context_watch.dart';
 import 'package:flutter/material.dart';
-import 'package:str/app_theme.dart';
-import 'package:str/di.dart';
-import 'package:str/screens/home_screen.dart';
+import 'package:unfck/app_theme.dart';
+import 'package:unfck/di.dart';
+import 'package:unfck/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

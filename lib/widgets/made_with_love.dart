@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:str/app_theme.dart';
-import 'package:str/assets.dart';
+import 'package:unfck/app_theme.dart';
+import 'package:unfck/assets.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class MadeWithLove extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:str/app_theme.dart';
-import 'package:str/di.dart';
-import 'package:str/models/thing_model.dart';
+import 'package:unfck/app_theme.dart';
+import 'package:unfck/di.dart';
+import 'package:unfck/models/thing_model.dart';
 
 class ThingCard extends StatelessWidget {
   // show text

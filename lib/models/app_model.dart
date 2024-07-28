@@ -1,6 +1,6 @@
 import 'package:dart_mappable/dart_mappable.dart';
-import 'package:str/models/archived_thing_model.dart';
-import 'package:str/models/thing_model.dart';
+import 'package:unfck/models/archived_thing_model.dart';
+import 'package:unfck/models/thing_model.dart';
 
 part 'app_model.mapper.dart';
 

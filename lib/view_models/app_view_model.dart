@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:str/di.dart';
-import 'package:str/models/app_model.dart';
-import 'package:str/models/thing_model.dart';
+import 'package:unfck/di.dart';
+import 'package:unfck/models/app_model.dart';
+import 'package:unfck/models/thing_model.dart';
 
 class AppViewModel extends ValueNotifier<AppModel> {
   AppViewModel() : super(AppModel.create());

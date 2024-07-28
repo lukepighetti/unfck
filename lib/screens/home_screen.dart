@@ -1,9 +1,9 @@
 import 'package:context_watch/context_watch.dart';
 import 'package:flutter/material.dart';
-import 'package:str/app_theme.dart';
-import 'package:str/di.dart';
-import 'package:str/widgets/made_with_love.dart';
-import 'package:str/widgets/thing_card.dart';
+import 'package:unfck/app_theme.dart';
+import 'package:unfck/di.dart';
+import 'package:unfck/widgets/made_with_love.dart';
+import 'package:unfck/widgets/thing_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
