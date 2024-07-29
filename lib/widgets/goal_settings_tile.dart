@@ -3,6 +3,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/di.dart';
 import 'package:unfck/models/goal_model.dart';
+import 'package:unfck/services/analytics.dart';
 
 class GoalSettingsTile extends StatefulWidget {
   const GoalSettingsTile(
@@ -64,6 +65,7 @@ class _GoalSettingsTileState extends State<GoalSettingsTile> {
               child: IconButton(
                 onPressed: () {
                   vm.toggleGoalHidden(goal);
+                  Analytics.tapToggleGoalHidden();
                 },
                 icon: Icon(
                   widget.goal.hidden

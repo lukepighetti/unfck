@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/assets.dart';
+import 'package:unfck/services/analytics.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class MadeWithLove extends StatelessWidget {
@@ -9,7 +10,7 @@ class MadeWithLove extends StatelessWidget {
 
   void handleViewCreator() {
     launchUrlString('https://twitter.com/luke_pighetti');
-    // TODO: Analytics.tapViewCreator();
+    Analytics.tapViewCreator();
   }
 
   @override

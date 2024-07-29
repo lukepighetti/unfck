@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/di.dart';
+import 'package:unfck/services/analytics.dart';
 import 'package:unfck/widgets/goal_settings_tile.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -13,6 +14,12 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  @override
+  void initState() {
+    Analytics.openSettings();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final vm = di.appViewModel..watch(context);
@@ -54,8 +61,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     if (oldIndex < newIndex) {
                       newIndex -= 1;
                     }
-
+                    if (oldIndex == newIndex) return;
                     vm.reorderGoals(oldIndex, newIndex);
+                    Analytics.reorderGoal();
                   },
                   children: [
                     for (final (i, goal) in vm.value.sortedAllGoals.indexed)

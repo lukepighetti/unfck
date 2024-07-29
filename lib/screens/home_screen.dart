@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/di.dart';
+import 'package:unfck/services/analytics.dart';
 import 'package:unfck/views/heatmap_view.dart';
 import 'package:unfck/widgets/logotype.dart';
 import 'package:unfck/widgets/made_with_love.dart';
@@ -70,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(PhosphorIcons.envelopeSimple()),
                 onPressed: () {
                   launchUrlString('mailto:lukepighetti+unfck@gmail.com');
+                  Analytics.tapSendEmail();
                 },
               ),
               Expanded(
@@ -79,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(PhosphorIcons.githubLogo()),
                 onPressed: () {
                   launchUrlString('https://github.com/lukepighetti/unfck');
+                  Analytics.tapViewRepository();
                 },
               ),
             ],

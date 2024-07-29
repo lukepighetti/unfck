@@ -3,6 +3,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:unfck/app_theme.dart';
 import 'package:unfck/di.dart';
 import 'package:unfck/models/goal_model.dart';
+import 'package:unfck/services/analytics.dart';
 
 class GoalCard extends StatefulWidget {
   const GoalCard({super.key, required this.goal});
@@ -29,6 +30,7 @@ class _GoalCardState extends State<GoalCard> {
         onHover: (hovering) => setState(() => this.hovering = hovering),
         onTap: () async {
           di.appViewModel.toggleGoal(goal);
+          Analytics.tapToggleGoal();
         },
         child: Padding(
           padding: const EdgeInsets.all(16),
