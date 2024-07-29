@@ -20,13 +20,25 @@ class GoalSettingsTile extends StatefulWidget {
 class _GoalSettingsTileState extends State<GoalSettingsTile> {
   var hovering = false;
   late final controller = TextEditingController(text: widget.goal.title);
-  late final focusNode = FocusNode();
+  late final focusNode = FocusNode()..addListener(_onFocusNodeUpdated);
 
   void saveTitle() {
     final newTitle = controller.text.trim();
     if (newTitle.isEmpty) return;
     di.appViewModel.updateGoalTitle(widget.goal, newTitle);
     focusNode.unfocus();
+  }
+
+  void _onFocusNodeUpdated() {
+    final hasFocus = focusNode.hasFocus;
+    if (hasFocus == false) saveTitle();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    focusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -54,9 +66,10 @@ class _GoalSettingsTileState extends State<GoalSettingsTile> {
                     onSubmitted: (_) => saveTitle(),
                     onTapOutside: (_) => saveTitle(),
                     style: context.textBody,
-                    minLines: 1,
-                    maxLines: 5,
                     decoration: InputDecoration(border: InputBorder.none),
+                    // allow multiple lines, but return submits the form
+                    maxLines: null,
+                    keyboardType: TextInputType.text,
                   ),
                 ),
               ),
