@@ -1,10 +1,22 @@
 # Unfck Your Life
 
-## Splash Screen
+Every life has ups and downs. If you find yourself stressed, struggling, anxious, or disenchanted, it might be time to *Unfck Your life*.
+
+Unfck is a simple daily self-care tracker that follows best practices. You can hide goals, rename them, see your weekly progress, and add up to 5 custom items.
+
+It's a Flutter PWA, so it can be installed without an app store (Share => Add To Home Screen) and Flutter creates a uniquely "app-like" PWA experience.
+
+https://unfck.app/
+
+<img src="docs/screenshot.png" height=500 />
+
+## Features
+
+### Splash Screen
 
 - [x] splashy "UNFCK" logotype
 
-## Home Screen
+### Home Screen
 
 - [x] app bar
     - [x] app name / logotype
@@ -21,7 +33,7 @@
     - [x] source button
     - [x] feedback button
 
-## Settings Screen
+### Settings Screen
 
 - [ ] highlight items that haven't been address in `wait for feedback`
     - don't highlight
