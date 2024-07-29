@@ -7,7 +7,7 @@ import 'package:unfck/services/analytics.dart';
 import 'package:unfck/views/heatmap_view.dart';
 import 'package:unfck/widgets/logotype.dart';
 import 'package:unfck/widgets/made_with_love.dart';
-import 'package:unfck/widgets/thing_card.dart';
+import 'package:unfck/widgets/goal_card.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class HomeScreen extends StatefulWidget {
