@@ -39,14 +39,13 @@ class _GoalSettingsTileState extends State<GoalSettingsTile> {
       clipBehavior: Clip.hardEdge,
       elevation: 10,
       color: context.colorGrey1,
-      child: SizedBox(
-        height: 48,
+      child: IntrinsicHeight(
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: TextField(
@@ -55,7 +54,8 @@ class _GoalSettingsTileState extends State<GoalSettingsTile> {
                     onSubmitted: (_) => saveTitle(),
                     onTapOutside: (_) => saveTitle(),
                     style: context.textBody,
-                    maxLines: 1,
+                    minLines: 1,
+                    maxLines: 5,
                     decoration: InputDecoration(border: InputBorder.none),
                   ),
                 ),
@@ -83,7 +83,9 @@ class _GoalSettingsTileState extends State<GoalSettingsTile> {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 8),
                   color: context.colorGrey3,
-                  child: Icon(PhosphorIcons.dotsSixVertical()),
+                  child: Center(
+                    child: Icon(PhosphorIcons.dotsSixVertical()),
+                  ),
                 ),
               ),
             ),
