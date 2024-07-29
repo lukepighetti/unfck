@@ -24,8 +24,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     final vm = di.appViewModel..watch(context);
 
-    return Material(
-      child: Column(
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+      body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(24),

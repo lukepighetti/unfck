@@ -22,8 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final vm = di.appViewModel..watch(context);
 
-    return Material(
-      child: ListView(
+    return Scaffold(
+      body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
           Row(
