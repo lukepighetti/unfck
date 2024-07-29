@@ -35,9 +35,7 @@ class _GoalCardState extends State<GoalCard> {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: DefaultTextStyle(
-            style: context.textHeadline.copyWith(
-              color: context.colorForeground,
-            ),
+            style: context.textGoalCardTitle.copyWith(color: context.colorForeground),
             child: Row(
               children: [
                 Expanded(

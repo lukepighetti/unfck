@@ -37,6 +37,11 @@ extension ThemeExtensions on BuildContext {
         fontWeight: FontWeight.w400,
       );
 
+  TextStyle get textGoalCardTitle => GoogleFonts.outfit(
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+      );
+
   TextStyle get textBody => GoogleFonts.outfit(
         fontSize: 16,
         fontWeight: FontWeight.w400,
